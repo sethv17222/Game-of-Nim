@@ -10,7 +10,7 @@ public class Board
 
     public static void pickPlayer()
     {
-        random = (int) (Math.random() * ((2 - 1) + 1));
+        random = 1 + (int)(Math.random() * ((2 - 1) + 1));
     }
 
     public static int getNumPieces()
@@ -44,3 +44,4 @@ public class Board
         sc.close();
     }
 }
+
