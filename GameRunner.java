@@ -23,5 +23,10 @@ public class GameRunner
     System.out.println("Each player will take turns taking no more than half of the total pieces until someone takes the last piece.");
     System.out.print("That player that takes the last piece will lose the game.");
 
+    if (Board.getNumPieces() > 1) {
+        
+    }
+
   }
+
 }
