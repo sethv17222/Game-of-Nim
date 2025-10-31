@@ -19,6 +19,10 @@ public class Board
         return pieces;
     }
 
+    public static void setNumPieces(int newPieces)
+    {
+        pieces = newPieces;
+    }
     public static int getRandomPlayer()
     {
         System.out.println("Player " + random + " goes first");
@@ -33,15 +37,22 @@ public class Board
         while (true) {
             System.out.println("Enter how many pieces you would like to take (no more than half): ");
             try {
-                minusPieces = sc.nextInt;
+                minusPieces = sc.nextInt();
+
+                if (minusPieces > 0 && minusPieces <= Board.getNumPieces() / 2) {
+                    Board.setNumPieces(Board.getNumPieces() - minusPieces);
+                    System.out.println("You removed " + minusPieces + " pieces.");
+                    break;
+                } else {
+                    System.out.println("Invalid number. You must take at least 1 and no more than half of the remaining pieces.");
+                }
+                
             } catch (InputMismatchException e) {
-                System.out.println("Invalid input. Enter another integer(must be half or less than total)");
+                System.out.println("Invalid input. Enter another integer.");
                 sc.next();
             }
         }
-
-        System.out.println("You entered " + minusPieces);
-        sc.close();
     }
 }
+
 
