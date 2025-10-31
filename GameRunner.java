@@ -23,10 +23,17 @@ public class GameRunner
     System.out.println("Each player will take turns taking no more than half of the total pieces until someone takes the last piece.");
     System.out.print("That player that takes the last piece will lose the game.");
 
-    if (Board.getNumPieces() > 1) {
-        
+    while (Board.getNumPieces() > 1) {
+        Player.takeTurn();
+        Board.removePieces();
+        System.out.println("There are " + Board.getNumPieces() + " tiles remaining");
+    } else {
+        System.out.println("There is one tile left, which means that you have lost the game.");
+        System.out.println("The player who did not pick up the last tile gets one point.");
+        Player.incrScore();
     }
 
   }
 
 }
+
