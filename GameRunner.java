@@ -26,14 +26,18 @@ public class GameRunner
     while (Board.getNumPieces() > 1) {
         Player.takeTurn();
         Board.removePieces();
-        System.out.println("There are " + Board.getNumPieces() + " tiles remaining");
+        if (Board.getNumPieces() == 1) {
+          System.out.println("There is one tile left, which means that you have lost the game.");
+          System.out.println("The player who did not pick up the last tile gets one point.");
+          Player.incrScore();
+          break;
     } else {
-        System.out.println("There is one tile left, which means that you have lost the game.");
-        System.out.println("The player who did not pick up the last tile gets one point.");
-        Player.incrScore();
+          System.out.println("There are " + Board.getNumPieces() + " tiles remaining");
+    }
     }
 
   }
 
 }
+
 
