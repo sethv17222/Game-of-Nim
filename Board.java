@@ -42,6 +42,7 @@ public class Board
                 if (minusPieces > 0 && minusPieces <= Board.getNumPieces() / 2) {
                     Board.setNumPieces(Board.getNumPieces() - minusPieces);
                     System.out.println("You removed " + minusPieces + " pieces.");
+                    System.out.println("Remaining pieces: " + Board.getNumPieces()):
                     break;
                 } else {
                     System.out.println("Invalid number. You must take at least 1 and no more than half of the remaining pieces.");
@@ -54,5 +55,6 @@ public class Board
         }
     }
 }
+
 
 
